@@ -15,9 +15,17 @@ tree = html.fromstring(page.content)
 area = tree.xpath('//h1/text()')[0]
 print("Weather forecast for " + area + "\n")
 
+# Now get the weather summaries and temperatures...
+# We use xpath to identify the right bit of the webpage to grap
+#   e.g. the weather summary is in a <div> with class=
+#   wr-day__details__weather-type-description
+# So to get the correct xpath, look at the HTML, see what element
+# contains the info you want, and look for an attribute such as class
+# that you can use to identify it.
 summaries = tree.xpath('//div[@class="wr-day__details__weather-type-description"]/text()')
 temps = tree.xpath('//span[@class="wr-value--temperature--c"]/text()')
 
+# Now print out our forecast
 counter = 0
 for summary, temp in zip(summaries, temps):
    if counter == 0:
