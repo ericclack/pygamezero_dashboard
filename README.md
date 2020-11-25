@@ -57,10 +57,10 @@ When you inspect the source code, you see headlines coded like this...
      ...
 ```
 
-So the headline is in an <a> tag, which is in an <h1> tag. Therefore we can try the XPath:
+So the headline is in an `<a>` tag, which is in an `<h1>` tag. Therefore we can try the XPath:
 
 ```
 print tree.xpath('//h1/a/text()')
 ```
 
-The first `//h1` means find all <h1> tags wherever they are in the document, and `text()` means get the text inside the tag. 
+The first `//h1` means find all `<h1>` tags wherever they are in the document, and `text()` means get the text inside the tag. 
