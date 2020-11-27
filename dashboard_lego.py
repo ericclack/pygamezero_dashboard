@@ -1,5 +1,3 @@
-#import pgzrun
-
 from lxml import html
 import requests
 import ssl
@@ -18,6 +16,4 @@ titles = tree.xpath('//h1/a/text()')
 for t in titles:
    print(t)
 
-
-#pgzun.go()
 
