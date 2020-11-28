@@ -21,7 +21,7 @@ pip3 install --user -r requirements.txt
 # Test it out
 
 ```
-python3 dashboard.py
+python3 dashboard0.py
 ```
 
 # Add your own information
