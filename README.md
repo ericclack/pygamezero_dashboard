@@ -1,15 +1,24 @@
-# Pygame Zero Dashboard
+# Python Dashboard
 
-Scrape information from websites and show things on your own dashboard
+Scrape information from websites and show things on your own dashboard.
 
 Tutorial for Brighton Coder Dojo.
+
+What you will learn: 
+- Using a real IDE such as Visual Studio Code
+- How to install Python libraries
+- How go get web content from a URL
+- How to pick out info from the page using XPath expressions
+
+Coming soon:
+- How to display this content on a dashboard
 
 # Set up
 
 Check out this repo onto your computer:
 
 ```
-git clone https://github.com/ericclack/pygamezero_dashboard.git
+git clone https://github.com/ericclack/python_dashboard.git
 ```
 
 Install the packages we need:
