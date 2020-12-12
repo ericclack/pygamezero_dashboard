@@ -1,6 +1,7 @@
 from lxml import html
 import requests
 import ssl
+import PySimpleGUI as sg
 
 
 WIDTH = 800
@@ -37,3 +38,16 @@ for summary, temp in zip(summaries, temps):
    print(summary, temp)
    counter += 1
 
+layout = [ [sg.Text('Hello!')],
+           [sg.Button('Ok'), sg.Button('Cancel')]]
+
+window = sg.Window('Window Title', layout)
+
+while True:
+   event, values = window.read()
+
+   # if user closes window or clicks cancel
+   if event == sg.WIN_CLOSED or event == 'Cancel': 
+        break
+
+window.close()
