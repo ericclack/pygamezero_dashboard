@@ -40,7 +40,7 @@ Now try the next example:
 python3 dashboard.py
 ```
 
-This gets the title, plus the individual forcasts for each day. 
+This gets the title, plus the individual forecasts for each day. 
 
 # Add your own information
 
@@ -85,7 +85,24 @@ The first `//h1` means find all `<h1>` tags wherever they are in the document, a
 
 # Problems with JavaScript
 
+Many modern websites use JavaScript to render their content and this makes it hard to scrape. So you will often see something like this in the page title:
+
+```
+['One more step', 'Please turn JavaScript on and reload the page.']
+```
+
+What to do?
+- You could find an RSS feed instead (see the next section)
+- Or... watch this space! We are trying to discover a way to make this work. 
+
 # Getting news from RSS feeds
+
+RSS feeds can be easier to work with than HTML pages because their structure is simpler and therefore it is easier to make XPath expressions.
+
+Have a look at [dashboard_rss.py](https://github.com/ericclack/python_dashboard/blob/master/dashboard_rss.py) to see a working example.
+
+You might notice a slight difference compared with our HTML examples: we use `etree` to make the tree instead of `html` on line 1 and 10.
 
 # Adding a GUI
 
+Take a look at the example `dashboard_gui_qt.py` to see the beginnings of a GUI for our data. 
