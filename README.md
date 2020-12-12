@@ -31,7 +31,7 @@ pip3 install --user -r requirements.txt
 python3 dashboard0.py
 ```
 
-Go and look at the source code for this file and to see how we get the
+Go and look at the [source code](https://github.com/ericclack/python_dashboard/blob/master/dashboard0.py) for this file and to see how we get the
 web page and the title from it.
 
 Now try the next example:
