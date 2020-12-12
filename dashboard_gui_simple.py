@@ -38,10 +38,15 @@ for summary, temp in zip(summaries, temps):
    print(summary, temp)
    counter += 1
 
-layout = [ [sg.Text('Hello!')],
-           [sg.Button('Ok'), sg.Button('Cancel')]]
+# Now do the same for GUI
 
-window = sg.Window('Window Title', layout)
+layout = []
+for summary, temp in zip(summaries, temps):
+   layout.append([sg.Text(temp + " " + summary)])
+
+layout.append([sg.Button('Ok'), sg.Button('Cancel')])
+
+window = sg.Window("Weather forecast for " + area , layout)
 
 while True:
    event, values = window.read()

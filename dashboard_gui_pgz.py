@@ -4,7 +4,7 @@ from lxml import html
 import requests
 import ssl
 
-WIDTH = 500
+WIDTH = 600
 HEIGHT = 500
 
 # Make HTTPS links work:
@@ -16,7 +16,6 @@ tree = html.fromstring(page.content)
 
 # The first H1 is the area
 area = tree.xpath('//h1/text()')[0]
-print("Weather forecast for " + area + "\n")
 
 # Now get the weather summaries and temperatures...
 # We use xpath to identify the right bit of the webpage to grap
@@ -30,15 +29,24 @@ temps = tree.xpath('//span[@class="wr-value--temperature--c"]/text()')
 
 
 def draw():
+   screen.clear()
    # Now print out our forecast
-   counter = 0
+   size = 25
+
+   screen.draw.text("Weather forecast for " + area, (10,0))
+
+   counter = 1
    for summary, temp in zip(summaries, temps):
-      if counter == 0:
-         screen.draw.text("Today: ", (10,20*counter))
-      elif counter == 1:
-         screen.draw.text("Tomorrow: ", (10,20*counter))
+      if counter == 1:
+         screen.draw.text("Today: ", (10,size*counter), fontsize=size)
+      elif counter == 2:
+         screen.draw.text("Tomorrow: ", (10,size*counter), fontsize=size)
          
-      screen.draw.text(summary + temp, (50,20*counter))
+      screen.draw.text(temp, topright=(size*6,size*counter), fontsize=size, color="orange")
+      screen.draw.text(summary, (size*7,size*counter), fontsize=size)
       counter += 1
 
 pgzrun.go()
+
+# On my Mac - use the right version o
+#/usr/local/bin/python3 dashboard_gui_pgz.p

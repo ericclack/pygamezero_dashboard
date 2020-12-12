@@ -17,7 +17,7 @@ items = tree.xpath('//item')
 for i in items:
     title = i.xpath('title/text()')[0]
     description = i.xpath('description/text()')[0]
-    # link =
+    # link = ...
     print("**" + title + "**")
     print(description)
     print()

@@ -73,3 +73,15 @@ print tree.xpath('//h1/a/text()')
 ```
 
 The first `//h1` means find all `<h1>` tags wherever they are in the document, and `text()` means get the text inside the tag. 
+
+# Mac install notes
+
+```
+brew install sdl sdl_mixer
+```
+
+Run Pygame scripts with:
+
+```
+/Users/ericclack/Library/Python/3.9/bin
+```

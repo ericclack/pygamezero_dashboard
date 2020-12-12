@@ -1,0 +1,8 @@
+requests==2.24.0
+lxml==4.6.1
+PySimpleGUI==4.32.1
+
+# Extras for PyGame Zero -- these need to be installed by hand, one
+# at a time
+pgzero>=1.2
+pygame>=2.0.0
