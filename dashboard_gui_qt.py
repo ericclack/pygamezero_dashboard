@@ -3,7 +3,7 @@ from lxml import html
 import requests
 import ssl
 
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel
 
 # Make HTTPS links work:
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -25,22 +25,28 @@ area = tree.xpath('//h1/text()')[0]
 summaries = tree.xpath('//div[@class="wr-day__details__weather-type-description"]/text()')
 temps = tree.xpath('//span[@class="wr-value--temperature--c"]/text()')
 
+app = QApplication(sys.argv)
 
-def main():
+w = QWidget()
+w.resize(300,280)
+w.move(300,300)
+w.setWindowTitle(area)
 
-   app = QApplication(sys.argv)
+t = QLabel("Weather for " + area, w)
+t.move(10,10)
 
-   w = QWidget()
-   w.resize(250,150)
-   w.move(300,300)
-   w.setWindowTitle(area)
+counter = 1
+for summary, temp in zip(summaries[:10], temps[:10]):
+   t = QLabel(temp + " " + summary, w)
+   t.move(20, 10 + counter * 20)
+   counter += 1
 
-   b = QPushButton('Done', w)
-   b.clicked.connect(app.quit)
-   b.move(50,50)
-   
-   w.show()
+b = QPushButton('Done', w)
+b.clicked.connect(app.quit)
+b.move(10,12*20)
 
-   sys.exit(app.exec_())
+w.show()
 
-main()
+# Run the window
+app.exec_()
+
