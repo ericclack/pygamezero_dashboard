@@ -9,9 +9,7 @@ What you will learn:
 - How to install Python libraries
 - How go get web content from a URL
 - How to pick out info from the page using XPath expressions
-
-Coming soon:
-- How to display this content on a dashboard
+- How to build a Graphical User Interface (a GUI)
 
 # Set up
 
@@ -32,6 +30,17 @@ pip3 install --user -r requirements.txt
 ```
 python3 dashboard0.py
 ```
+
+Go and look at the source code for this file and to see how we get the
+web page and the title from it.
+
+Now try the next example:
+
+```
+python3 dashboard.py
+```
+
+This gets the title, plus the individual forcasts for each day. 
 
 # Add your own information
 
@@ -72,16 +81,11 @@ So the headline is in an `<a>` tag, which is in an `<h1>` tag. Therefore we can 
 print tree.xpath('//h1/a/text()')
 ```
 
-The first `//h1` means find all `<h1>` tags wherever they are in the document, and `text()` means get the text inside the tag. 
+The first `//h1` means find all `<h1>` tags wherever they are in the document, and `text()` means get the text inside the tag, that is between <a> and </a>
 
-# Mac install notes
+# Problems with JavaScript
 
-```
-brew install sdl sdl_mixer
-```
+# Getting news from RSS feeds
 
-Run Pygame scripts with:
+# Adding a GUI
 
-```
-/Users/ericclack/Library/Python/3.9/bin
-```

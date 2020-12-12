@@ -12,6 +12,5 @@ tree = html.fromstring(page.content)
 
 # The first H1 is the area
 area = tree.xpath('//h1/text()')[0]
-print("Weather forecast for " + area + "\n")
-
+print("Want to know the weather for " + area + "?\n")
 
