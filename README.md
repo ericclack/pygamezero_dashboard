@@ -11,7 +11,7 @@ What you will learn:
 - How to pick out info from the page using XPath expressions
 - How to build a Graphical User Interface (a GUI)
 
-# Set up
+## Set up
 
 Check out this repo onto your computer:
 
@@ -25,7 +25,7 @@ Install the packages we need:
 pip3 install --user -r requirements.txt
 ```
 
-# Test it out
+## Test it out
 
 ```
 python3 dashboard0.py
@@ -44,7 +44,7 @@ python3 dashboard.py
 
 This gets the title, plus the individual forecasts for each day. 
 
-# Add your own information
+## Add your own information
 
 Have a look in the `dashboard.py` file to see how we get weather data
 from the BBC website. There are three steps to do this:
@@ -53,7 +53,7 @@ from the BBC website. There are three steps to do this:
 2. Turn the HTML into a tree structure, which makes it easier to find what we need, using `html.fromstring(page.content)`
 3. Use `tree.xpath(path)` to pick out the data we need.
 
-## How to write the XPath
+### How to write the XPath
 
 First find the page you want to use in your web browser. Now find the
 data you want on the webpage and select it with your mouse. Now you need
@@ -85,7 +85,7 @@ print tree.xpath('//h1/a/text()')
 
 The first `//h1` means find all `<h1>` tags wherever they are in the document, and `text()` means get the text inside the tag, that is between <a> and </a>
 
-# Problems with JavaScript
+### Problems with JavaScript
 
 Many modern websites use JavaScript to render their content and this makes it hard to scrape. So you will often see something like this in the page title:
 
@@ -97,7 +97,7 @@ What to do?
 - You could find an RSS feed instead (see the next section)
 - Or... watch this space! We are trying to discover a way to make this work. 
 
-# Getting news from RSS feeds
+### Getting news from RSS feeds
 
 RSS feeds can be easier to work with than HTML pages because their structure is simpler and therefore it is easier to make XPath expressions.
 
@@ -106,9 +106,15 @@ Have a look at [dashboard_rss.py](https://github.com/ericclack/python_dashboard/
 You might notice a slight difference compared with our HTML examples:
 we use `etree` to make the tree instead of `html` on line 1 and 10.
 
-# Adding a GUI
+## Adding a GUI
 
 Take a look at the example `dashboard_gui_qt.py` to see the beginnings
 of a GUI for our data.
 
-And `dashboard_lego_gui.py` includes buttons for opening links. 
+And `dashboard_lego_gui.py` includes buttons for opening links.
+
+## Finding out more about Qt
+
+* http://zetcode.com/gui/pyqt5/ - Tutorial
+* https://wiki.qt.io/Main - Qt Wiki
+* 
