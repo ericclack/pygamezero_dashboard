@@ -11,9 +11,10 @@ tree = html.fromstring(page.content)
 
 print("Lego news stories:\n")
 
-# The news titles are in <H1>, in an <a> element
-titles = tree.xpath('//h1/a/text()')
-for t in titles:
-   print(t)
+# The news titles are in <H2>, in an <a> element
+titles = tree.xpath('//h2/a/text()')
+links = tree.xpath('//h2/a/@href')
+for t, h in zip(titles, links):
+   print(t, h)
 
 

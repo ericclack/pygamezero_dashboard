@@ -1,4 +1,4 @@
-import sys
+import sys, os
 from lxml import html
 import requests
 import ssl
@@ -25,10 +25,17 @@ area = tree.xpath('//h1/text()')[0]
 summaries = tree.xpath('//div[@class="wr-day__details__weather-type-description"]/text()')
 temps = tree.xpath('//span[@class="wr-value--temperature--c"]/text()')
 
+def open_web_page():
+   url = "http://www.google.com"
+   if sys.platform == 'darwin':
+      os.system("open " + url)
+   else:
+      os.system("start " + url)
+      
 app = QApplication(sys.argv)
 
 w = QWidget()
-w.resize(300,280)
+w.resize(300,330)
 w.move(300,300)
 w.setWindowTitle(area)
 
@@ -38,7 +45,12 @@ t.move(10,10)
 counter = 1
 for summary, temp in zip(summaries[:10], temps[:10]):
    t = QLabel(temp + " " + summary, w)
-   t.move(20, 10 + counter * 20)
+   t.move(80, 10 + counter * 20)
+   
+   b = QPushButton('Go', w)
+   b.clicked.connect(open_web_page)
+   b.move(10, 10 + counter * 20)
+   
    counter += 1
 
 b = QPushButton('Done', w)
@@ -49,4 +61,3 @@ w.show()
 
 # Run the window
 app.exec_()
-
