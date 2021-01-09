@@ -103,8 +103,12 @@ RSS feeds can be easier to work with than HTML pages because their structure is 
 
 Have a look at [dashboard_rss.py](https://github.com/ericclack/python_dashboard/blob/master/dashboard_rss.py) to see a working example.
 
-You might notice a slight difference compared with our HTML examples: we use `etree` to make the tree instead of `html` on line 1 and 10.
+You might notice a slight difference compared with our HTML examples:
+we use `etree` to make the tree instead of `html` on line 1 and 10.
 
 # Adding a GUI
 
-Take a look at the example `dashboard_gui_qt.py` to see the beginnings of a GUI for our data. 
+Take a look at the example `dashboard_gui_qt.py` to see the beginnings
+of a GUI for our data.
+
+And `dashboard_lego_gui.py` includes buttons for opening links. 
